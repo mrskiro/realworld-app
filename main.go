@@ -7,10 +7,11 @@ import (
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Hello World!")
+	fmt.Fprint(w, "Hello World!", r.Method)
 }
 
 func main() {
+	fmt.Println("Hello world")
 	mux := http.NewServeMux()
 	mux.HandleFunc("/", handler)
 
